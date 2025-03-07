@@ -47,10 +47,7 @@ pipe = this.add.image(1320, 570, 'pipe').setScale(0.6);
 
 balloon.setInteractive();
 balloon.on('pointerdown', burstBalloon,this);
-
-
 }
-
 let isFloating = false;
 let dx = (Math.random() - 0.5) * 2;
 let dy = -3;
@@ -67,11 +64,11 @@ if (isFloating) {
 
 balloon.x += dx;
 balloon.y += dy;
-
+//Bounces off the walls
 if (balloon.x <= 50 || balloon.x >= config.width - 50) {
 dx *= -1;
 }
-
+//Stops the balloon from going off the top or bottom of the screen
 if (balloon.y <= 50) {
 dy = 1;
 } else if (balloon.y >= config.height - 50) {
