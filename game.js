@@ -25,6 +25,14 @@ function preload() {
         }
     }
 
+    for (let i = 1; i <= 26; i++) {
+        if(i < 10){
+            this.load.image(`letter${i}`, `assets/Symbol 1000${i}.png`);
+        }else {
+            this.load.image(`letter${i}`, `assets/Symbol 100${i}.png`)
+        }
+    }    
+
     this.load.audio('pop', 'assets/Pop sound.mp3');
     this.load.image('pump', 'assets/Symbol 320003.png');
     this.load.image('background', 'assets/Symbol 3 copy.png');
@@ -38,6 +46,12 @@ function spawnBalloon(scene) {
     newBalloon.dx = (Math.random() - 0.5) * 4;
     newBalloon.dy = -3;
     newBalloon.isFloating = false;
+
+    const letterIndex = balloonCount + 1;
+    const letter = scene.add.image(newBalloon.x, newBalloon.y, `letter${letterIndex}`).setScale(0.1);
+
+    newBalloon.letter = letter;
+
     return newBalloon;
 }
 
@@ -107,6 +121,11 @@ function update() {
         b.x += b.dx;
         b.y += b.dy;
 
+        if (b.letter) {
+            b.letter.x = b.x;
+            b.letter.y = b.y;
+        }
+
         // Bounce off walls
         if (b.x <= 50 || b.x >= config.width - 50) b.dx *= -1;
         if (b.y <= 50 || b.y >= config.height - 50) b.dy *= -1;
@@ -119,6 +138,7 @@ function burstBalloon() {
 
     scene.sound.play('pop');
     floatingBalloons = floatingBalloons.filter(b => b !== balloon);
+    if (balloon.letter) balloon.letter.destroy();
     balloon.destroy();
 }
 
