@@ -21,12 +21,12 @@ A fun interactive game prototype built using **Phaser 3**, where balloons are in
 - JavaScript (ES6)
 - HTML5 & Canvas
 
-🎮 Controls
+##🎮 Controls
 🖱️ Click and hold the pump button to inflate.
 
 💥 Click on a floating balloon to pop it!
 
-✨ Features
+##✨ Features
 Randomized balloon graphics
 
 Alphabet labeling on balloons
