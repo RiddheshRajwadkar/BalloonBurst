@@ -69,15 +69,15 @@ function create() {
     this.add.image(config.width / 2, config.height / 2, 'background').setDisplaySize(config.width, config.height);
 
     pumpButton = this.add.image(1500, 450, 'pumpButton').setScale(0.4)
-        .setInteractive()
-        .on('pointerdown', () => {
-            isInflating = true;
-            pumpButton.setScale(0.35);
-        })
-        .on('pointerup', () => {
-            isInflating = false;
-            pumpButton.setScale(0.4);
-        });
+    .setInteractive()
+    .on('pointerdown', () => {
+        this.input.mousePointer.isDown = true;
+        pumpButton.setScale(0.35);
+    })
+    .on('pointerup', () => {
+        this.input.mousePointer.isDown = false;
+        pumpButton.setScale(0.4);
+    });
 
     this.add.image(1500, 600, 'pump').setScale(0.6);
     this.add.image(1320, 570, 'pipe').setScale(0.6);
@@ -95,10 +95,26 @@ function create() {
 }
 
 function update() {
+    // Move all floating balloons
+    floatingBalloons.forEach(b => {
+        b.x += b.dx;
+        b.y += b.dy;
+
+        if (b.letter) {
+            b.letter.x = b.x;
+            b.letter.y = b.y;
+        }
+
+        // Bounce off walls
+        if (b.x <= 50 || b.x >= config.width - 50) b.dx *= -1;
+        if (b.y <= 50 || b.y >= config.height - 50) b.dy *= -1;
+    });
+
     if (!currentBalloon && balloonCount >= maxBalloons) return;
 
     // Inflate balloon
-    if (currentBalloon && isInflating && currentBalloon.scale < 0.5) {
+    if (currentBalloon && this.input.activePointer.isDown && currentBalloon.scale < 0.5) {
+
         currentBalloon.setScale(currentBalloon.scale + 0.01);
         currentBalloon.setY(currentBalloon.y - 1.5);
     }
@@ -115,21 +131,6 @@ function update() {
             currentBalloon = spawnBalloon(this);
         }
     }
-
-    // Move all floating balloons
-    floatingBalloons.forEach(b => {
-        b.x += b.dx;
-        b.y += b.dy;
-
-        if (b.letter) {
-            b.letter.x = b.x;
-            b.letter.y = b.y;
-        }
-
-        // Bounce off walls
-        if (b.x <= 50 || b.x >= config.width - 50) b.dx *= -1;
-        if (b.y <= 50 || b.y >= config.height - 50) b.dy *= -1;
-    });
 }
 
 function burstBalloon() {
