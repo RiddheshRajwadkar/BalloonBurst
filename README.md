@@ -1,40 +1,78 @@
-# 🎈 Balloon Inflation & Bursting Game
+# 🎈 Balloon Pump & Burst Game
 
-A fun interactive game prototype built using **Phaser 3**, where balloons are inflated using a pump, float around randomly, and can be burst by clicking/tapping them.
+A small game prototype where you pump and burst balloons! Made using **Phaser 3**, **HTML**, **CSS**, and **JavaScript**.
 
-## 📽️ Game Description
+![Game Screenshot](./assets/screenshot.png)
 
-- Press the **air pump button** repeatedly to inflate a balloon.
-- Once fully inflated, the balloon floats freely in a random direction.
-- Click/tap the floating balloon to **burst it** with a satisfying pop sound!
-- Each balloon contains a unique **alphabet letter**.
-- Total of **26 balloons**, one for each letter A–Z.
+---
 
-## 🚀 Live Demo
+## 📖 Assignment Description
+**Goal**: Create a balloon game where:
+- You press a pump to inflate balloons
+- Once filled, balloons float randomly
+- You can tap to burst them
 
-👉 [Play the Game on GitHub Pages](https://your-github-username.github.io/balloon-game/)  
-*(Update the above link with your actual deployed GitHub Pages URL)*
+---
 
-## 🧰 Built With
+## 🛠️ Features
+- Realistic balloon inflation with scaling
+- Random floating movement once inflated
+- Click to burst with a pop sound
+- Letter symbols displayed on balloons (A–Z)
+- Phaser-powered game logic
+- Responsive design (full-screen)
 
-- [Phaser 3](https://phaser.io/) – HTML5 Game Framework
-- JavaScript (ES6)
-- HTML5 & Canvas
+---
 
-## 🎮 Controls
-🖱️ Click and hold the pump button to inflate.
+## 🧹 Tech Stack
+- **Phaser 3** – Game engine
+- **HTML/CSS/JS** – Web technologies
 
-💥 Click on a floating balloon to pop it!
+---
 
-## ✨ Features
-Randomized balloon graphics
+## 🚀 Deployment
+Deployed using **Netlify**.
 
-Alphabet labeling on balloons
+🔗 **Live Link**: [https://your-balloon-game.netlify.app](https://your-balloon-game.netlify.app) *(replace with actual URL)*
 
-Realistic floating physics with screen bounce
+### 🌐 How to Deploy on Netlify (Free):
+1. Go to [https://netlify.com](https://netlify.com)
+2. Sign up and log in
+3. Click **"Add New Site" → "Deploy manually"**
+4. Drag and drop your project folder
+5. Done! Your game is live
 
-Balloon pop sound
+---
 
-Clean mobile-friendly layout
+## 🧪 How to Run Locally
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your-username/balloon-pump-game.git
+   ```
+2. Open `index.html` in your browser
 
-📦 Deployment
+---
+
+## 📁 Folder Structure
+```
+📆 balloon-pump-game
+📁 assets
+👉 Symbol 100001.png → Symbol 100026.png (Letters A–Z)
+👉 Balloon PNGs (Symbol 100001–100010)
+👉 Pop sound.mp3
+👉 Pump and background images
+index.html
+script.js
+README.md
+```
+
+---
+
+## 🧑‍💻 Developer
+**Riddhesh Rajwadkar**
+
+---
+
+## 📜 License
+Free to use and modify for educational and non-commercial use.
+
