@@ -4,7 +4,10 @@ A small game prototype where you pump and burst balloons! Made using **Phaser 3*
 
 ![Game Screenshot](./assets/screenshot.png)
 
----
+---![image](https://github.com/user-attachments/assets/83d4cf40-97d7-4a28-9710-074bb376e257)
+![image](https://github.com/user-attachments/assets/303f3d01-0c93-4cea-962f-427634bbe430)
+
+
 
 ## 📖 Assignment Description
 **Goal**: Create a balloon game where:
