@@ -2,7 +2,7 @@
 
 A small game prototype where you pump and burst balloons! Made using **Phaser 3**, **HTML**, **CSS**, and **JavaScript**.
 
-![Game Screenshot](./assets/screenshot.png)
+# [Game Screenshot](./assets/screenshot.png)
 
 ---![image](https://github.com/user-attachments/assets/83d4cf40-97d7-4a28-9710-074bb376e257)
 ![image](https://github.com/user-attachments/assets/303f3d01-0c93-4cea-962f-427634bbe430)
