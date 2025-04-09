@@ -58,15 +58,12 @@ Deployed using **Netlify**.
 
 ## 📁 Folder Structure
 ```
-📆 balloon-pump-game
-📁 assets
-👉 Symbol 100001.png → Symbol 100026.png (Letters A–Z)
-👉 Balloon PNGs (Symbol 100001–100010)
-👉 Pop sound.mp3
-👉 Pump and background images
-index.html
-script.js
-README.md
+balloon-game/
+├── assets
+├── index.html
+├── main.js
+└── README.md
+
 ```
 
 ---
