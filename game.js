@@ -3,8 +3,8 @@ const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
 const config = {
     type: Phaser.AUTO,
-    width: 1734,
-    height: 824,
+    width: window.innerWidth,
+    height: window.innerHeight,
     scene: {
         preload,
         create,
@@ -143,7 +143,7 @@ function burstBalloon() {
     balloon.destroy();
 }
 
-function gameOver(scene) {
+function reset(scene) {
     const text = scene.add.text(config.width / 2, config.height / 2, 'Game Over!', {
         fontSize: '64px',
         fill: '#ffffff'
