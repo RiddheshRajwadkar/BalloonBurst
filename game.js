@@ -38,6 +38,8 @@ function preload() {
     this.load.image('background', 'assets/Symbol 3 copy.png');
     this.load.image('pumpButton', 'assets/Symbol 320001.png');
     this.load.image('pipe', 'assets/Symbol 320002.png');
+    this.load.image('restartButton', 'assets/restart.png');
+
 }
 
 function spawnBalloon(scene) {
@@ -71,13 +73,18 @@ function create() {
     pumpButton = this.add.image(1500, 450, 'pumpButton').setScale(0.4)
     .setInteractive()
     .on('pointerdown', () => {
-        this.input.mousePointer.isDown = true;
+        isInflating = true;
         pumpButton.setScale(0.35);
     })
     .on('pointerup', () => {
-        this.input.mousePointer.isDown = false;
+        isInflating = false;
+        pumpButton.setScale(0.4);
+    })
+    .on('pointerout', () => {
+        isInflating = false;
         pumpButton.setScale(0.4);
     });
+    
 
     this.add.image(1500, 600, 'pump').setScale(0.6);
     this.add.image(1320, 570, 'pipe').setScale(0.6);
@@ -113,7 +120,7 @@ function update() {
     if (!currentBalloon && balloonCount >= maxBalloons) return;
 
     // Inflate balloon
-    if (currentBalloon && this.input.activePointer.isDown && currentBalloon.scale < 0.5) {
+    if (currentBalloon && isInflating && currentBalloon.scale < 0.5) {
 
         currentBalloon.setScale(currentBalloon.scale + 0.01);
         currentBalloon.setY(currentBalloon.y - 1.5);
@@ -134,7 +141,7 @@ function update() {
 }
 
 function burstBalloon() {
-    const balloon = this; // 'this' is the clicked balloon
+    const balloon = this;
     const scene = balloon.scene;
 
     scene.sound.play('pop');
@@ -143,10 +150,3 @@ function burstBalloon() {
     balloon.destroy();
 }
 
-function reset(scene) {
-    const text = scene.add.text(config.width / 2, config.height / 2, 'Game Over!', {
-        fontSize: '64px',
-        fill: '#ffffff'
-    });
-    text.setOrigin(0.5);
-}
