@@ -36,7 +36,7 @@ A small game prototype where you pump and burst balloons! Made using **Phaser 3*
 ## 🚀 Deployment
 Deployed using **Netlify**.
 
-🔗 **Live Link**: [https://your-balloon-game.netlify.app](https://your-balloon-game.netlify.app) *(replace with actual URL)*
+🔗 **Live Link**: https://balloon-pump-game.netlify.app/
 
 ### 🌐 How to Deploy on Netlify (Free):
 1. Go to [https://netlify.com](https://netlify.com)
